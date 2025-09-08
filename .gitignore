@@ -1,0 +1,24 @@
+.states
+__pycache__/
+*.db
+*.py[cod]
+.web
+assets/external/
+# Dependencies
+/node_modules
+
+# Build output
+/.web
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+
+# IDE and editor directories
+.idea/
+

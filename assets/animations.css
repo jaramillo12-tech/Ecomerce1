@@ -1,0 +1,331 @@
+
+/* Define a floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Define a title bounce animation */
+@keyframes title-bounce {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Define a button interactive animation for light mode */
+@keyframes button-light-interactive {
+  0% {
+    box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(14, 165, 233, 0.06);
+  }
+  50% {
+    box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.2), 0 4px 6px -2px rgba(14, 165, 233, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(14, 165, 233, 0.06);
+  }
+}
+
+/* Define a product card light mode animation */
+@keyframes product-card-light {
+  0% {
+    box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(14, 165, 233, 0.06);
+  }
+  100% {
+    box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.15), 0 10px 10px -5px rgba(14, 165, 233, 0.1);
+  }
+}
+
+/* Define a product card image light mode animation */
+@keyframes product-card-image-light {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.05);
+  }
+}
+
+/* Apply animations */
+.animate-float {
+  animation: float 1s ease-in-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
+.title-bounce {
+  animation: title-bounce 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.button-light-interactive {
+  animation: button-light-interactive 2s ease-in-out infinite;
+}
+
+.product-card-light {
+  animation: product-card-light 0.3s ease-out forwards;
+}
+
+.product-card-image-light {
+  animation: product-card-image-light 0.3s ease-out forwards;
+}
+
+/* Dark mode specific styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark * {
+  border-color: rgb(55, 65, 81);
+}
+
+/* Ensure body and html have proper background in dark mode */
+.dark body, .dark html {
+  background-color: rgb(15, 23, 42) !important; /* slate-900 */
+  color: white !important;
+}
+
+/* Light mode body background */
+body, html {
+  background-color: white !important;
+  color: rgb(30, 41, 59) !important; /* slate-800 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Force dark mode on all elements */
+.dark {
+  background-color: rgb(15, 23, 42) !important; /* slate-900 */
+  color: white !important;
+}
+
+/* Don't force inherit on all elements to preserve hover effects */
+.dark .bg-white {
+  background-color: rgb(31, 41, 55) !important; /* gray-800 */
+}
+
+/* Specific overrides for dark mode */
+.dark .text-sky-800, .dark .text-sky-700, .dark .text-sky-600 {
+  color: rgb(203, 213, 225) !important; /* gray-300 */
+}
+
+.dark .border-sky-200, .dark .border-sky-300 {
+  border-color: rgb(75, 85, 99) !important; /* gray-600 */
+}
+
+/* Preserve hover effects */
+.hover\:bg-sky-100:hover {
+  background-color: rgb(224, 242, 254) !important;
+}
+
+.dark .hover\:bg-sky-100:hover {
+  background-color: rgb(55, 65, 81) !important;
+}
+
+.hover\:bg-sky-600:hover {
+  background-color: rgb(2, 132, 199) !important;
+}
+
+.hover\:bg-sky-700:hover {
+  background-color: rgb(3, 105, 161) !important;
+}
+
+.hover\:bg-gray-700:hover {
+  background-color: rgb(55, 65, 81) !important;
+}
+
+.hover\:bg-gray-600:hover {
+  background-color: rgb(75, 85, 99) !important;
+}
+
+/* Button hover effects */
+.hover\:bg-green-600:hover {
+  background-color: rgb(22, 163, 74) !important;
+}
+
+.hover\:bg-red-600:hover {
+  background-color: rgb(220, 38, 38) !important;
+}
+
+.hover\:bg-orange-600:hover {
+  background-color: rgb(234, 88, 12) !important;
+}
+
+.hover\:bg-orange-800:hover {
+  background-color: rgb(154, 52, 18) !important;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+/* Ensure all elements transition smoothly */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, form, section, article, aside, nav, header, footer, main {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgb(31, 41, 55);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(75, 85, 99);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 114, 128);
+}
+
+/* Light mode scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(248, 250, 252);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(203, 213, 225);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(148, 163, 184);
+}
+
+/* Theme transition improvements */
+.theme-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure product cards are visible in both themes */
+.product-card {
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .product-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3), 0 10px 10px -5px rgba(59, 130, 246, 0.1);
+}
+
+/* Fix for product visibility issues */
+.grid {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure text is always visible */
+.text-sky-800, .text-sky-700, .text-sky-600 {
+  transition: color 0.3s ease;
+}
+
+.text-white, .text-gray-300, .text-gray-400 {
+  transition: color 0.3s ease;
+}
+
+/* Background transitions */
+.bg-white, .bg-slate-900, .bg-gray-800, .bg-gray-700 {
+  transition: background-color 0.3s ease;
+}
+
+/* Border transitions */
+.border-sky-200, .border-sky-300, .border-gray-600, .border-gray-700 {
+  transition: border-color 0.3s ease;
+}
+
+/* Navbar hover effects */
+.navbar-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .navbar-link:hover {
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Button scale effects */
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.hover\:-translate-y-1\.5:hover {
+  transform: translateY(-6px);
+}
+
+/* Text hover effects */
+.hover\:text-sky-900:hover {
+  color: rgb(12, 74, 110) !important;
+}
+
+.hover\:text-sky-800:hover {
+  color: rgb(7, 89, 133) !important;
+}
+
+.hover\:text-sky-600:hover {
+  color: rgb(2, 132, 199) !important;
+}
+
+.hover\:text-white:hover {
+  color: white !important;
+}
+
+.hover\:text-red-800:hover {
+  color: rgb(153, 27, 27) !important;
+}
+
+.hover\:text-red-200:hover {
+  color: rgb(254, 202, 202) !important;
+}
+
+.hover\:text-orange-800:hover {
+  color: rgb(154, 52, 18) !important;
+}
+
+.hover\:text-orange-200:hover {
+  color: rgb(254, 215, 170) !important;
+}
+
+/* Image hover effects */
+.group:hover .group-hover\:opacity-90 {
+  opacity: 0.9;
+}
+
+.group:hover .group-hover\:opacity-85 {
+  opacity: 0.85;
+}
+
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+
